@@ -13,7 +13,7 @@ private JButton withdrawButton;
 private JButton depositButton;
 private JTextField userInput;
 private JLabel output;
-private int balance;
+private double balance;
 
 public accountBalance() {
 	JPanel mainPanel = new JPanel();
@@ -42,26 +42,26 @@ public accountBalance() {
 //Defining actionListeners for the buttons
 private class balanceListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		int balanceAmount = Integer.parseInt(userInput.getText());
+		double balanceAmount = Double.parseDouble(userInput.getText());
 		balance = balanceAmount;
-		output.setText(Integer.toString(balance));
+		output.setText(Double.toString(balance));
 		userInput.setText("");
 	}
 }
 private class depositListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		int depositAmount = Integer.parseInt(userInput.getText());
+		double depositAmount = Double.parseDouble(userInput.getText());
 		balance = balance + depositAmount;
-		output.setText(Integer.toString(balance));
+		output.setText(Double.toString(balance));
 		userInput.setText("");
 		
 	}
 }
 	private class withdrawListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			int withdrawAmount = Integer.parseInt(userInput.getText());
+			double withdrawAmount = Double.parseDouble(userInput.getText());
 			balance = balance - withdrawAmount;
-			output.setText(Integer.toString(balance));
+			output.setText(Double.toString(balance));
 			userInput.setText("");
 		}	
 }
